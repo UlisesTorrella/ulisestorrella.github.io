@@ -1,0 +1,178 @@
+
+                    <html>
+                    <head>
+                        <style>
+    /* =========================
+       Dark-mode protection
+       ========================= */
+    :root {
+        color-scheme: light;
+        supported-color-schemes: light;
+    }
+
+    /* =========================
+       Base document styling
+       ========================= */
+    body {
+        margin: 0 auto;
+        padding: 24px;
+        max-width: 700px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                     Roboto, Helvetica, Arial, sans-serif;
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        line-height: 1.55;
+    }
+
+    /* Force readable colors everywhere (Gmail fix) */
+    table,
+    td,
+    div,
+    p,
+    span,
+    h1,
+    h3 {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+    }
+
+    /* =========================
+       Headings
+       ========================= */
+    h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #2563eb !important;
+    }
+
+    /* =========================
+       Text emphasis & links
+       ========================= */
+    b {
+        color: #2563eb !important;
+        font-weight: 600;
+        background-color: transparent !important;
+    }
+
+    a {
+        color: #2563eb !important;
+        background-color: transparent !important;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    br {
+        display: block;
+        margin: 8px 0;
+        content: "";
+    }
+
+    /* =========================
+       Card / section container
+       ========================= */
+    td[style*="vertical-align"] > div {
+        background-color: #f9fafb !important;
+        color: #1f2937 !important;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 16px;
+    }
+
+    /* =========================
+       Tables
+       ========================= */
+    table {
+        border-collapse: collapse;
+    }
+
+    /* Leaderboard table */
+    .leaderboard-table {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        margin-top: 8px;
+
+        /* shrink to content */
+        width: auto;
+        table-layout: auto;
+        display: inline-table;
+    }
+
+    .leaderboard-table td {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-bottom: 1px solid #e5e7eb;
+
+        /* single-line rows */
+        white-space: nowrap;
+
+        /* right-align list values */
+        text-align: right;
+    }
+
+    .leaderboard-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Emoji / country column */
+    .leaderboard-table td:first-child {
+        text-align: center;
+        width: 1%;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+</style>
+                    </head>
+                    <body>
+                        <h1>Your teutuli wrapped:</h1>
+                        You made 272 guesses!<br>
+                        Your best day/map was Midwalls Monday with a mean accuracy of 59.26%! 
+                        <br>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Your most visited countries were:</h3>
+                                <table class="dataframe leaderboard-table">
+  <tbody>
+    <tr>
+      <td>🇺🇸</td>
+      <td>23 times</td>
+    </tr>
+    <tr>
+      <td>🇮🇹</td>
+      <td>16 times</td>
+    </tr>
+    <tr>
+      <td>🇦🇷</td>
+      <td>11 times</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                        </table>
+                        <br>
+                        Your nearest guess was 0.03km away in round 1 of <a href='https://www.geoguessr.com/results/3FNHFWBj3XGrA2xg'>this challenge</a>.
+                        <br>
+                        But your <b>clutch guess</b> was 0.18km away in round 4 of <a href='https://www.geoguessr.com/results/1s7xMlu3XVH5SA5D'>this challenge</a>.
+                        This is the best score you got compared to the average of the other guessers on that same location.
+                        <br>
+                        The furthers away you guessed was going 🇮🇩 to 🇨🇴 in <a href='https://www.geoguessr.com/results/BilWLpG7MVjCQ5vG'>this challenge</a>
+                        <br>
+                        But actually your worst guess, if we consider the other guessers, was going 5527.27km away in round 2 of <a href='https://www.geoguessr.com/results/9uqK9dNrYhcxtWUg'>this challenge</a>.
+                        <br>
+                        We noticed a bias in your guesses leaning towards 🇺🇸. This is the country you went the most, when it wasnt the right one. You a 🇺🇸?
+                    </body>
+                    </html>
+                    

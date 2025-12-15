@@ -1,0 +1,869 @@
+
+            <html>
+                <head>
+                    <style>
+    /* =========================
+       Dark-mode protection
+       ========================= */
+    :root {
+        color-scheme: light;
+        supported-color-schemes: light;
+    }
+
+    /* =========================
+       Base document styling
+       ========================= */
+    body {
+        margin: 0 auto;
+        padding: 24px;
+        max-width: 700px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                     Roboto, Helvetica, Arial, sans-serif;
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        line-height: 1.55;
+    }
+
+    /* Force readable colors everywhere (Gmail fix) */
+    table,
+    td,
+    div,
+    p,
+    span,
+    h1,
+    h3 {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+    }
+
+    /* =========================
+       Headings
+       ========================= */
+    h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #2563eb !important;
+    }
+
+    /* =========================
+       Text emphasis & links
+       ========================= */
+    b {
+        color: #2563eb !important;
+        font-weight: 600;
+        background-color: transparent !important;
+    }
+
+    a {
+        color: #2563eb !important;
+        background-color: transparent !important;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    br {
+        display: block;
+        margin: 8px 0;
+        content: "";
+    }
+
+    /* =========================
+       Card / section container
+       ========================= */
+    td[style*="vertical-align"] > div {
+        background-color: #f9fafb !important;
+        color: #1f2937 !important;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 16px;
+    }
+
+    /* =========================
+       Tables
+       ========================= */
+    table {
+        border-collapse: collapse;
+    }
+
+    /* Leaderboard table */
+    .leaderboard-table {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        margin-top: 8px;
+
+        /* shrink to content */
+        width: auto;
+        table-layout: auto;
+        display: inline-table;
+    }
+
+    .leaderboard-table td {
+        background-color: #ffffff !important;
+        color: #1f2937 !important;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-bottom: 1px solid #e5e7eb;
+
+        /* single-line rows */
+        white-space: nowrap;
+
+        /* right-align list values */
+        text-align: right;
+    }
+
+    .leaderboard-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Emoji / country column */
+    .leaderboard-table td:first-child {
+        text-align: center;
+        width: 1%;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+</style>
+                </head>
+                        <body>
+                <h1>Wrapping up the championship:</h1>
+                The championship is over and what better than numbers to celebrate it!
+                <br>
+                We had people coming and going, in total 28 guessers participated in the championship.
+                <br>
+                The day with the highest attendance saw 16 guesses. But the average attendance was 14 guessers a day.
+                <br>
+                And we should give credits to our perfect attendance guessers: 
+                 🇭🇷 Ivan Spajić,  🇫🇷 JosePisco,  🌍 Daniil,  🇦🇷 Ulises,  🇺🇸 Hunter,  🇦🇷 Lautarolecu!
+                <br>
+                But some people arrived late to the party, so the pure objective way to compare our guesses would be our points scored normalized by rounds played. This is how the table would've looked like:
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Normalized points championship:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Points per day</th>
+      <th>Rounds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Ulises 🥇</td>
+      <td>17499.11</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥈</td>
+      <td>16934.91</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil 🥉</td>
+      <td>16459.22</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi</td>
+      <td>16419.11</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>15494.54</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>15465.77</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>15289.81</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>14242.55</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>13981.32</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>13255.38</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>12371.26</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>11902.46</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>11893.51</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>11742.16</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>11338.37</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>11031.25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>10677.50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>10101.09</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>9938.47</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>9473.70</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                        </table>
+                
+                But we know that accuracy is not always the most important aspect, how about speed? How would the championship would look like if we account by speed? 
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Points by second championship:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Points per second</th>
+      <th>Average round time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥇</td>
+      <td>55.81</td>
+      <td>05:03</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Ulises 🥈</td>
+      <td>54.39</td>
+      <td>05:21</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu 🥉</td>
+      <td>52.24</td>
+      <td>03:13</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil</td>
+      <td>49.97</td>
+      <td>05:29</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>49.81</td>
+      <td>04:40</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>49.67</td>
+      <td>03:48</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>46.77</td>
+      <td>04:11</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi</td>
+      <td>42.26</td>
+      <td>06:28</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>39.56</td>
+      <td>05:59</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>39.25</td>
+      <td>06:34</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>39.04</td>
+      <td>05:16</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>39.00</td>
+      <td>04:33</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>38.37</td>
+      <td>06:43</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>37.24</td>
+      <td>06:50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>35.69</td>
+      <td>05:33</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>33.74</td>
+      <td>04:40</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>33.73</td>
+      <td>05:52</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>32.76</td>
+      <td>06:44</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>31.44</td>
+      <td>05:16</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>31.25</td>
+      <td>05:53</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                Another remark, people have been complaining of some maps being harder than others.
+                So let's see how peoples performance has been on each map. 
+                These are your average points per map tables!
+
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Midwalls Mondays:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Midwalls Monday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Ulises 🥇</td>
+      <td>17190.00</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥈</td>
+      <td>16770.46</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić 🥉</td>
+      <td>16671.92</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil</td>
+      <td>16397.69</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>16207.57</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>15733.50</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>15680.62</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>15659.58</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>15596.62</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>15365.25</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>15356.00</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>14815.91</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>14493.00</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>14373.25</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi</td>
+      <td>14090.00</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>13799.00</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>13602.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>13312.88</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>11961.77</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>11137.33</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Traceable Tuesdays:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Traceable Tuesday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Ulises 🥇</td>
+      <td>18969.54</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥈</td>
+      <td>18657.85</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil 🥉</td>
+      <td>18467.62</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>17859.00</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>17782.69</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>17450.33</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>16656.62</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi</td>
+      <td>16556.33</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>16527.85</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>16275.67</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>16214.25</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>15575.92</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>15518.29</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>14468.43</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>14189.33</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>14133.23</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>13638.15</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>12223.00</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>11364.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>9677.50</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Wild Wednesdays:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Wild Wednesday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Ulises 🥇</td>
+      <td>12499.46</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta 🥈</td>
+      <td>11347.00</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥉</td>
+      <td>11040.54</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil</td>
+      <td>10399.46</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>9251.31</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>8538.15</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>7404.86</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>6484.75</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>6370.85</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>5905.50</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>5683.54</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>5028.70</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>4838.00</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>4567.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>4342.25</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>3808.14</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>3795.00</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>3757.50</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>3470.00</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Typical Thursdays:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Typical Thursday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥇</td>
+      <td>17510.77</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil 🥈</td>
+      <td>16723.23</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi 🥉</td>
+      <td>16472.00</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Ulises</td>
+      <td>16460.77</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco</td>
+      <td>15137.54</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>14879.00</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>14867.00</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>14729.92</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>14486.08</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>13752.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>12757.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>12336.71</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>10996.50</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>10651.46</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>10013.38</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>9904.00</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>9574.64</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>9515.43</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>8755.77</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>8531.00</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                <table style="width: 100%; border-collapse: collapse;">
+                        <td style="vertical-align: top; padding: 10px;">
+                                <div><h3> Flag Fredager!:</h3>
+                                <table class="dataframe leaderboard-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>Flag Fredag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🇦🇷 Ulises 🥇</td>
+      <td>22375.77</td>
+    </tr>
+    <tr>
+      <td>🇫🇷 JosePisco 🥈</td>
+      <td>20731.54</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Lautarolecu 🥉</td>
+      <td>20694.92</td>
+    </tr>
+    <tr>
+      <td>🌍 Daniil</td>
+      <td>20308.08</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 Ivan Spajić</td>
+      <td>19993.85</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 majoumushi</td>
+      <td>19680.50</td>
+    </tr>
+    <tr>
+      <td>🇺🇿 Islomjon</td>
+      <td>19453.86</td>
+    </tr>
+    <tr>
+      <td>🇩🇪 Janne</td>
+      <td>17788.15</td>
+    </tr>
+    <tr>
+      <td>🇦🇹 Lotta</td>
+      <td>17724.78</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Nacho Fernandez</td>
+      <td>16520.00</td>
+    </tr>
+    <tr>
+      <td>🇺🇸 Hunter</td>
+      <td>16146.38</td>
+    </tr>
+    <tr>
+      <td>🇳🇱 elinesterre</td>
+      <td>15874.12</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Sakul</td>
+      <td>15000.00</td>
+    </tr>
+    <tr>
+      <td>🇮🇹 Michele</td>
+      <td>14350.40</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Kristoffer</td>
+      <td>14210.54</td>
+    </tr>
+    <tr>
+      <td>🇦🇷 Kakolecu</td>
+      <td>14075.67</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 Raquelita</td>
+      <td>13661.50</td>
+    </tr>
+    <tr>
+      <td>🇮🇷 Fate</td>
+      <td>12740.50</td>
+    </tr>
+    <tr>
+      <td>🇳🇴 JT</td>
+      <td>12711.50</td>
+    </tr>
+    <tr>
+      <td>🇩🇰 Chueco</td>
+      <td>6850.50</td>
+    </tr>
+  </tbody>
+</table></div>
+                            </td>
+                </table>
+
+                But a new season will come next year and some days will change maps.
+                Not fridays. Fridays are flags.
+                </body>
+            
