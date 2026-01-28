@@ -22,7 +22,7 @@ jobs:
         cd daily_teutuli
         ls -la
         echo "Running Python script..."
-        python3 your_script.py
+        python3 main.py
     
     - name: Commit and push changes
       run: |
