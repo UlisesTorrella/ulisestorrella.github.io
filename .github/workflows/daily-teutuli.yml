@@ -1,0 +1,20 @@
+name: Daily Email
+on:
+  schedule:
+    - cron: '0 20 40 * *'  # 8 AM daily
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Daily Report
+          to: ulises.torrella@gmail.com
+          from: Teutuli <${{ secrets.EMAIL_USERNAME }}>
+          body: Your email content here
