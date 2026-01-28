@@ -1,6 +1,4 @@
 name: Daily Challenge
-env:
-  GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
 on:
   schedule:
     - cron: '0 7 * * *'  # 8 AM daily
@@ -15,7 +13,10 @@ jobs:
         python-version: '3.x'
     
     - name: Run Python script
-      run: python daily_teutuli/main.py 
+      env:
+        GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
+      working-directory: daily_teutuli
+      run: python3 main.py 
     
     - name: Commit and push changes
       run: |

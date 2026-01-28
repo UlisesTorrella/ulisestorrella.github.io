@@ -1,0 +1,14 @@
+
+body, p, h1, h2, h3, h4, h5, h6, td, th, div, table {
+    color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+    body, p, h1, h2, h3, h4, h5, h6, td, th, div, table {
+        color: black !important;
+    }
+}
+@media (prefers-color-scheme: light) {
+    body, p, h1, h2, h3, h4, h5, h6, td, th, div, table {
+        color: white !important;
+    }
+}
