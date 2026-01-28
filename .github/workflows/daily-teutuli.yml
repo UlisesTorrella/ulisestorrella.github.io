@@ -20,7 +20,9 @@ jobs:
         GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
       run: |
         cd daily_teutuli
-        python your_script.py
+        ls -la
+        echo "Running Python script..."
+        python3 your_script.py
     
     - name: Commit and push changes
       run: |
