@@ -9,13 +9,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    
-    - name: Read HTML file
-      id: html_content
-      run: |
-        echo "content<<EOF" >> $GITHUB_OUTPUT
-        cat output.html >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
     - name: Send email
       uses: dawidd6/action-send-mail@v3
       with:
