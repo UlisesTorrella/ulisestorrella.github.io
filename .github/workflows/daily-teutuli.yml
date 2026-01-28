@@ -15,6 +15,9 @@ jobs:
       with:
         python-version: '3.x'
     
+    - name: Install dependencies
+      run: pip install -r daily_teutuli/requirements.txt
+      
     - name: Run Python script
       env:
         GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
