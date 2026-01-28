@@ -36,9 +36,10 @@ jobs:
         git add daily_teutuli
         git commit -m "Ran daily of $(date +'%d-%m-%Y')"
         git push
+        
+    - name: Pull latest changes
+      run: git pull
 
-    - name: Checkout code
-      uses: actions/checkout@v3
     - name: Send email
       uses: dawidd6/action-send-mail@v3
       with:
