@@ -1,4 +1,6 @@
-name: Daily Email
+name: Daily Challenge
+env:
+  GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
 on:
   schedule:
     - cron: '0 7 * * *'  # 8 AM daily
@@ -7,6 +9,22 @@ jobs:
   send-email:
     runs-on: ubuntu-latest
     steps:
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Run Python script
+      run: python daily_teutuli/main.py 
+    
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add daily_teutuli
+        git commit -m "Ran daily of $(date +'%d-%m-%Y')"
+        git push
+
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Send email
@@ -20,4 +38,4 @@ jobs:
         to: ulises.torrella@gmail.com
         from: Teutuli <${{ secrets.EMAIL_USERNAME }}>
         body: Text body
-        html_body: file://output.html
+        html_body: file://daily_teutuli/output.html
