@@ -4,6 +4,14 @@ on:
     - cron: '0 7 * * *'  # 8 AM daily
   push: 
 jobs:
+  - name: Read HTML file
+    id: html_content
+    run: |
+      CONTENT=$(cat subdirectory/email-template.html)
+      echo "content<<EOF" >> $GITHUB_OUTPUT
+      echo "$CONTENT" >> $GITHUB_OUTPUT
+      echo "EOF" >> $GITHUB_OUTPUT
+
   send-email:
     runs-on: ubuntu-latest
     steps:
@@ -18,4 +26,4 @@ jobs:
           to: ulises.torrella@gmail.com
           from: Teutuli <${{ secrets.EMAIL_USERNAME }}>
           body: Text body
-          html_body: file://output.html
+          html_body: ${{ steps.html_content.outputs.content }}
