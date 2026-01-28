@@ -7,6 +7,9 @@ jobs:
   send-email:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -15,8 +18,9 @@ jobs:
     - name: Run Python script
       env:
         GEO_COOKIE: ${{ secrets.GEO_COOKIE }}
-      working-directory: daily_teutuli
-      run: python3 main.py 
+      run: |
+        cd daily_teutuli
+        python your_script.py
     
     - name: Commit and push changes
       run: |
