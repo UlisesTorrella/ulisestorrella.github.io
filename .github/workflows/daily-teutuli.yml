@@ -18,4 +18,4 @@ jobs:
           to: ulises.torrella@gmail.com
           from: Teutuli <${{ secrets.EMAIL_USERNAME }}>
           body: Text body
-          html_body: file://daily_teutuli/output.html
+          html_body: file:daily_teutuli/output.html
