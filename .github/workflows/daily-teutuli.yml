@@ -17,4 +17,5 @@ jobs:
           subject: Daily Report
           to: ulises.torrella@gmail.com
           from: Teutuli <${{ secrets.EMAIL_USERNAME }}>
-          body: Your email content here
+          body: Text body
+          html_body: file://daily_teutuli/output.html
