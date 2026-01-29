@@ -2,7 +2,7 @@ name: Daily Challenge
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 6 * * *'
 jobs:
   send-email:
     runs-on: ubuntu-latest
