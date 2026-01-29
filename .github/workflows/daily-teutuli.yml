@@ -1,8 +1,7 @@
 name: Daily Challenge
 on:
   schedule:
-    - cron: '0 7 * * *'  # 8 AM daily
-  push: 
+    - cron: "16 7 * * *"  # 8 AM daily
 jobs:
   send-email:
     runs-on: ubuntu-latest
