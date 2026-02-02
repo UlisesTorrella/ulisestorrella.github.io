@@ -1,24 +1,32 @@
 
-import sys
 from Reader import Reader
 
-# Get the new id
-# if len(sys.argv) < 2:
-#     print("Usage: python3 main.py <RESULT_ID>")
-#     sys.exit(1)
+from datetime import datetime
 
-new_challenge_id = "FpxfEyXydTyi1Dtl"
-# sys.argv[1]
+today = datetime.today().weekday()
+# Monday = 0, Sunday = 6
 
+if today == 0:
+    # Monday    
+    reader = Reader(test=False)
+    results = reader.update_leaderboard()
+    processed_df = reader.update_teutulis()
+    reader.commit_changes(results, reader.leaderboard_filename) 
+    reader.commit_changes(processed_df, reader.processed_csv)
+    championship_df = reader.week_results(results)
+    reader.commit_changes(championship_df, reader.championship_filename)
+    reader.print_podium(results)
+    reader.archive_week()
 
-reader = Reader(new_challenge_id, test=False)
+elif today in (1, 2, 3, 4):
+    # Tuesday–Friday
+    reader = Reader(test=False)
+    leaderboard_df = reader.update_leaderboard()
+    processed_df = reader.update_teutulis()
+    reader.commit_changes(leaderboard_df, reader.leaderboard_filename)
+    reader.commit_changes(processed_df, reader.processed_csv)
+    reader.to_html(leaderboard_df)
 
-leaderboard_df = reader.update_leaderboard()
-processed_df = reader.update_teutulis()
-
-reader.commit_changes(leaderboard_df, reader.leaderboard_filename)
-reader.commit_changes(processed_df, reader.processed_csv)
-
-reader.to_html(leaderboard_df)
-
-
+else:
+    # Go to church 
+    pass  

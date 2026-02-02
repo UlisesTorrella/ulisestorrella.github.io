@@ -19,10 +19,74 @@ class Reader:
 
     point_system = [25,18,15,12,10,8,6,4,2,1]
 
-    def __init__(self, new_challenge_id, test=False):
+    maps = {
+        "Monday" : {
+                        "map": "67756e6c8d7eb43c58faeebe",
+                        "timeLimit": 90,
+                        "forbidMoving": True,
+                        "forbidZooming": False,
+                        "forbidRotating": False,
+                        "accessLevel": 1,
+                        "challengeType": 0,
+                        "roundCount": 5,
+                        "guessMapType": "roadmap"
+                    },
+        "Tuesday" : {
+                        "map": "61c1d9be6f87f70001eb6055",
+                        "timeLimit": 90,
+                        "forbidMoving": True,
+                        "forbidZooming": False,
+                        "forbidRotating": False,
+                        "accessLevel": 1,
+                        "challengeType": 0,
+                        "roundCount": 5,
+                        "guessMapType": "roadmap"
+                    },
+        "Wednesday" : {
+                        "map": "5be0de51fe3a84037ca36447",
+                        "timeLimit": 90,
+                        "forbidMoving": True,
+                        "forbidZooming": False,
+                        "forbidRotating": False,
+                        "accessLevel": 1,
+                        "challengeType": 0,
+                        "roundCount": 5,
+                        "guessMapType": "roadmap"
+                    },
+        "Thursday" : {
+                        "map": "697a0d41ce2eb553139df2cf",
+                        "timeLimit": 90,
+                        "forbidMoving": True,
+                        "forbidZooming": False,
+                        "forbidRotating": False,
+                        "accessLevel": 1,
+                        "challengeType": 0,
+                        "roundCount": 5,
+                        "guessMapType": "roadmap"
+                    },
+        "Friday" : {
+                        "map": "68b6d567786b461080bd7c7e",
+                        "timeLimit": 90,
+                        "forbidMoving": True,
+                        "forbidZooming": False,
+                        "forbidRotating": False,
+                        "accessLevel": 1,
+                        "challengeType": 0,
+                        "roundCount": 5,
+                        "guessMapType": "roadmap"
+                    }
+    }
+
+    def __init__(self, test=False):
         self.processed_csv = "daily_teutulis.csv"
         self.today = datetime.now().strftime("%Y-%m-%d")
         self.processed_df = pd.read_csv(self.processed_csv)
+
+        if test:
+            new_challenge_id = "JO0jBSkSkzm8u34z"
+        else:
+            new_challenge_id = self.create_challenge()
+
         self.new_challenge_id = new_challenge_id
         self.test = test
 
@@ -31,9 +95,31 @@ class Reader:
         else:
             self.challenge_id = str(self.processed_df["ID"].iloc[-1])
             self.last_date = pd.to_datetime(self.processed_df["Date"].iloc[-1])
-            #deadline_naive = (self.last_date + pd.Timedelta(days=1)).replace(hour=8, minute=0, second=0, microsecond=0)
-            #self.deadline = deadline_naive.tz_localize("Europe/Oslo")
-            #print(self.deadline)
+
+    def create_challenge(self):
+        # Get today's day name (e.g. "Monday")
+        today = datetime.now().strftime("%A")
+
+        # Fetch the corresponding dictionary entry
+        
+        url = "https://www.geoguessr.com/api/v3/challenges"
+        headers = self.headers | {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+        payload = self.maps.get(today)
+
+        req = urllib.request.Request(
+            url=url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers=headers,
+            method="POST"
+        )
+
+        with urllib.request.urlopen(req) as response:
+            body = response.read().decode("utf-8")
+        response = json.loads(body)
+        return response["token"]
     
     
     def fetch(self, challenge_id):
@@ -270,7 +356,7 @@ class Reader:
             <p>Daily teutuli of the day:</p>
             <a href="https://www.geoguessr.com/challenge/{self.new_challenge_id}">Challenge</a>
             <div style="display: flex; gap: 20px;">
-                <div><h3> _ Grand Prix results: </h3>
+                <div><h3> Grand Prix results: </h3>
                 {leaderboard_html}</div>
                 <div><h3> Guessers Championship standings:</h3>
                 {championship_html}</div>
