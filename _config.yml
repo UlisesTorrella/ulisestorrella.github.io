@@ -1,5 +1,5 @@
 title: Ulises Torrella # your name (or website title) here
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
+logo: "/images/profile.png?raw=true" # your photo (or logo) here
 # description is now handled via _i18n/en.yml and _i18n/es.yml (sidebar.description key)
 
 remote_theme: pages-themes/minimal@v0.2.0
