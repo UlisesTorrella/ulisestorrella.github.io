@@ -1,0 +1,41 @@
+global:
+  title: "Ulises Torrella"
+  projects: "My projects"
+  less_serious: "Less Serious Stuff"
+
+sidebar:
+  description: >
+    PhD Student at the Western Norway University of Applied Sciences. Bergen, Norway
+    <br><br> 
+    Graduate from FAMAF, UNC. Cordoba, Argentina.
+    <br><br>
+    I'm working on programming language theory for resource-aware system modelling. My main interests are algebraic methods for computer science, as formal semantics and type systems. 
+    <br><br>
+    <a href="/fun">Less Serious Stuff</a>
+    <br><br>
+  fun_description: >
+    PhD Student at the Western Norway University of Applied Sciences. Bergen, Norway
+    <br><br> 
+    Graduate from FAMAF, UNC. Cordoba, Argentina.
+    <br><br>
+    Currently suffering of a chess and geoguessr addiction. 
+    When it's sunny I like to climb. 
+    <br><br>
+    <a href="/">Research</a> <br>
+  photo: "/images/profile.png"
+  fun_photo: "/images/profile.png"
+
+  links: >
+    <a href="https://www.linkedin.com/in/ulises-torrella" style="text-decoration:none; margin-right:12px; font-size:1.5rem; color:#0077B5;"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/UlisesTorrella/" style="text-decoration:none; margin-right:12px; font-size:1.5rem; color:#333;"><i class="fa-brands fa-github"></i></a>
+    <a href="https://lichess.org/@/Ulince" style="text-decoration:none; margin-right:12px; font-size:1.5rem; color:#333;"><img src="https://lichess.org/assets/favicon.ico" style="width:1.3rem; vertical-align:middle;"></a>
+    <a href="https://www.instagram.com/ulisestorrella" style="text-decoration:none; font-size:1.5rem; color:#E1306C;"><i class="fa-brands fa-instagram"></i></a>
+    <br><br>
+
+nav:
+  portfolio: "Portfolio"
+
+teutuli:
+  show_more: "Show more"
+  show_less: "Show less"
+  ongoing: "Ongoing!"

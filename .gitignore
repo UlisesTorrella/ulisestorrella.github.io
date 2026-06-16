@@ -1,1 +1,11 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# VS Code
+.vscode/
+
+# macOS
 .DS_Store

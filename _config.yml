@@ -1,3 +1,27 @@
-theme: jekyll-theme-minimal
-title: Ulises Torrella
-description: If i ever get to do this there should be things here
+title: Ulises Torrella # your name (or website title) here
+logo: "/images/logo.png?raw=true" # your photo (or logo) here
+# description is now handled via _i18n/en.yml and _i18n/es.yml (sidebar.description key)
+
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+- jekyll-multiple-languages-plugin
+
+languages: ["en", "es"]
+default_lang: "en"
+
+exclude_from_localizations:
+  - "images/"
+  - "assets/"
+  - "pdf/"
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "fun.md"
+  - "test/"
+  - "_site/"
+  - "_layouts/"
+  - ".github/"
+  - ".jekyll-cache/"
+  - "gh-pages/"
+  - "teutuli-wrapped/"
