@@ -29,7 +29,9 @@ sidebar:
     <a href="https://github.com/UlisesTorrella/" style="text-decoration:none; margin-right:12px; font-size:1.5rem; color:#333;"><i class="fa-brands fa-github"></i></a>
     <a href="https://lichess.org/@/Ulince" style="text-decoration:none; margin-right:12px; font-size:1.5rem; color:#333;"><img src="https://lichess.org/assets/favicon.ico" style="width:1.3rem; vertical-align:middle;"></a>
     <a href="https://www.instagram.com/ulisestorrella" style="text-decoration:none; font-size:1.5rem; color:#E1306C;"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://letterboxd.com/ulince" style="text-decoration:none; margin-right:12px; font-size:1.5rem;"><img src="https://letterboxd.com/favicon.ico" style="width:1.3rem; vertical-align:middle;"></a>
     <br><br>
+    
 
 nav:
   portfolio: "Portafolio"
